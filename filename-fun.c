@@ -3,9 +3,9 @@
 
 int main(void)
 {
-    char invalid[] = {0xE4};
-    char nfc[] = {0xC3, 0xA4};
-    char nfd[] = {0x61, 0xCC, 0x88};
+    char invalid[] = {0xE4, 0x00};
+    char nfc[] = {0xC3, 0xA4, 0x00};
+    char nfd[] = {0x61, 0xCC, 0x88, 0x00};
     FILE *fd;
     fd = fopen(nfc, "w");
     if (fd != NULL)
@@ -22,6 +22,6 @@ int main(void)
         {
         fclose(fd);
         }
-    return EXIT_SUCCESS;
+    return 0;
 }
 
