@@ -1,4 +1,5 @@
-
+#include <errno.h>
+#include <string.h>
 #include <stdio.h>
 
 int main(void)
@@ -15,6 +16,10 @@ int main(void)
             if (fd != NULL)
                 {
                 fclose(fd);
+                }
+	    else
+                {
+                printf("%s\n", strerror(errno));
                 }
         }
     return 0;
